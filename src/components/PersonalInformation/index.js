@@ -73,6 +73,7 @@ const PersonalInformation = () => {
 							ref={field.ref}
 							error={!!error}
 							helperText={error?.message}
+							inputProps={{ 'data-testid': 'firstName' }}
 						/>
 					)}
 				/>
@@ -87,13 +88,19 @@ const PersonalInformation = () => {
 							ref={field.ref}
 							error={!!error}
 							helperText={error?.message}
+							inputProps={{ 'data-testid': 'lastName' }}
 						/>
 					)}
 				/>
-				<Button type='submit' color='primary'>
+				<Button type='submit' color='primary' data-testid='submitButton'>
 					Next Step
 				</Button>
-				<Button type='button' color='secondary' onClick={onReset}>
+				<Button
+					type='button'
+					color='secondary'
+					onClick={onReset}
+					data-testid='resetButton'
+				>
 					Reset Form
 				</Button>
 			</Form>
